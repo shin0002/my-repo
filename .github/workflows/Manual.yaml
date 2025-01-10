@@ -1,13 +1,14 @@
 name: Manual
 on:
   workflow_dispatch:                      # 手動実行イベント
-  inputs:
-    greeting:
-      type: string
-      default: Hello
-      required: true
-      description: A cheerful word
+    inputs:
+        greeting:
+            type: string
+            default: Hello
+            required: true
+            description: A cheerful word
 jobs:
   run:
-  steps:
-    - run: echo "${{ inputs.greeting }}" # 入力パラメータ「greeting」の参照
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo "${{ inputs.greeting }}" # 入力パラメータ「greeting」の参照
